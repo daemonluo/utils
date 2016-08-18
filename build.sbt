@@ -1,5 +1,5 @@
 name := "utils"
-organization := "com.daemon"
+organization := "com.github.luolaifeng"
 version := "1.0.0"
 scalaVersion := "2.11.8"
 scalacOptions += "-deprecation"
