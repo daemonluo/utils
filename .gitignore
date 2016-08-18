@@ -1,0 +1,4 @@
+target/*
+.idea/*
+src/main/scala/main.scala
+src/test/scala/main.scala
