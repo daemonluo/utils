@@ -1,6 +1,6 @@
-package utils.opt.immutable
+package com.daemon.utils.opt.immutable
  
-import utils.opt.generic._
+import com.daemon.utils.opt.generic._
 import GenericOptionParser._
 
 

@@ -1,4 +1,4 @@
-package utils.jsonlib
+package com.daemon.utils.jsonlib
 
 import scala.annotation.{switch, tailrec}
 import java.lang.{StringBuilder => JStringBuilder}

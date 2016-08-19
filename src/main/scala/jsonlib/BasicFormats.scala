@@ -1,4 +1,4 @@
-package utils.jsonlib
+package com.daemon.utils.jsonlib
 
 /**
  * Provides the JsonFormats for the most important Scala types.

@@ -1,4 +1,4 @@
-package utils.jsonlib
+package com.daemon.utils.jsonlib
 
 trait ProductFormatsInstances { self: ProductFormats with StandardFormats =>
     // Case classes with 1 parameters

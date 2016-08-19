@@ -1,4 +1,4 @@
-package utils
+package com.daemon.utils
 
 import scala.language.implicitConversions
 

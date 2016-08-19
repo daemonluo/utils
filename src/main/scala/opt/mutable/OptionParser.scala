@@ -1,6 +1,6 @@
-package utils.opt.mutable
+package com.daemon.utils.opt.mutable
 
-import utils.opt.generic._
+import com.daemon.utils.opt.generic._
  
 /** opt.mutable.OptionParser is instantiated within your object,
  * set up by an (ordered) sequence of invocations of 

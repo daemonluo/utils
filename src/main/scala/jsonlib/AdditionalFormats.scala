@@ -1,4 +1,4 @@
-package utils.jsonlib
+package com.daemon.utils.jsonlib
 
 /**
  * Provides additional JsonFormats and helpers

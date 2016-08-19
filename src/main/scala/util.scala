@@ -1,4 +1,4 @@
-package utils;
+package com.daemon.utils;
 
 import com.github.nscala_time.time.Imports._
 import scala.io.Source

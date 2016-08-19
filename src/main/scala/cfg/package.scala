@@ -1,21 +1,40 @@
-package utils
+package com.daemon.utils
+
+import com.daemon.utils
+import java.nio.file.{Files,Paths}
+
+package cfg {
+    class ResourceNotFoundException(msg: String) extends java.io.FileNotFoundException(msg)
+}
 
 package object cfg {
     private val cfgMap = collection.mutable.Map[String, Config]()
 
-    def load(file: String, force: Boolean = false):  Config = {
-        if(!utils.path.exists(file) || !utils.path.isFile(file)){
-            throw new RuntimeException("no such file " + file)
+    def load(url: java.net.URL, force: Boolean = false):  Config = {
+        if(url == null){
+            throw new ResourceNotFoundException("no such resource " + url)
         }
-        if(!force && cfgMap.contains(file.toString)){
-            return cfgMap(file.toString)
+        if(!force && cfgMap.contains(url.toString)){
+            return cfgMap(url.toString)
         }
-        println("load " + file)
-        val config = new Config(file){
+        val config = new Config(url){
             load()
             parse()
         }
-        cfgMap(file.toString) = config
+        cfgMap(url.toString) = config
         return config
+    }
+
+    def loadFromPath(path: java.nio.file.Path, force: Boolean = false): Config = {
+        if(!Files.exists(path) || !Files.isRegularFile(path)){
+            throw new ResourceNotFoundException("no such file " + path.toString)
+        }
+        val url = path.toUri.toURL
+        load(url, force)
+    }
+
+    def loadFromFile(file: String, force: Boolean = false): Config = {
+        val path = Paths.get(file)
+        loadFromPath(path, force)
     }
 }

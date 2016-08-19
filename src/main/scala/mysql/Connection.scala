@@ -1,4 +1,4 @@
-package utils.mysql
+package com.daemon.utils.mysql
 
 import java.sql.DriverManager
 

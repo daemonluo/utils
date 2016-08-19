@@ -1,4 +1,4 @@
-package utils.jsonlib
+package com.daemon.utils.jsonlib
 
 import annotation.implicitNotFound
 import scala.language.implicitConversions

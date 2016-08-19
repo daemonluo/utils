@@ -1,10 +1,10 @@
-package utils.cfg
+package com.daemon.utils.cfg
 
-import utils.util
-import utils.NumbericString
-import utils.jsonlib
+import com.daemon.utils.util
+import com.daemon.utils.NumbericString
+import com.daemon.utils.jsonlib
 
-protected class Config(file: String){
+protected class Config(url: java.net.URL){
     private var lines = collection.mutable.ListBuffer.empty[String]
     private val kvs = collection.mutable.Map[String, Map[String, String]]()
 
@@ -13,7 +13,7 @@ protected class Config(file: String){
     private def isSection(line: String): Boolean = line.startsWith("[") && line.endsWith("]")
 
     def load() = {
-        val source = io.Source.fromFile(file)
+        val source = io.Source.fromURL(url)
         var lineContinue = ""
         source.getLines.foreach{ line => {
             var str = ""

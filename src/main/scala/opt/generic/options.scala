@@ -1,6 +1,6 @@
-package utils.opt.generic
+package com.daemon.utils.opt.generic
 
-import utils.util
+import com.daemon.utils.util
 import scala.language.postfixOps
  
 private[opt] object GenericOptionParser {
